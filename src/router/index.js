@@ -11,35 +11,12 @@ Vue.use(Router)
 export default new Router({
   linkActiveClass:  'mui-active',
   routes: [
-    {
-      path: '/home',
-      name: 'home',
-      component: home
-    },
-    {
-      path: '/member',
-      name: 'member',
-      component: member
-    },
-    {
-      path: '/shoppingCar',
-      name: 'shoppingCar',
-      component: shoppingCar
-    },
-    {
-      path: '/search',
-      name: 'search',
-      component: search
-    },
-    {
-      path: '/news/newsList',
-      name: 'newsList',
-      component: newsList
-    },
-    {
-      path: '/news/newsinfo:id',
-      name: 'newsinfo',
-      component: newsInfo
-    }
+    { path: '/', redirect: '/home' },
+    { path: '/home', name: 'home', component: home },
+    { path: '/member', name: 'member', component: member },
+    { path: '/shoppingCar', name: 'shoppingCar', component: shoppingCar },
+    { path: '/search', name: 'search', component: search },
+    { path: '/home/newsList', name: 'newsList', component: newsList },
+    { path: '/home/newsinfo/:id', name: 'newsinfo', component: newsInfo }
   ]
 })

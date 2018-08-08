@@ -6,24 +6,24 @@
         </mt-swipe-item>
      </mt-swipe>
      <ul class="mui-table-view mui-grid-view mui-grid-9">
-        <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4"><router-link to="/news/newsList">
+        <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4"><router-link to="/home/newsList">
                 <img src="../../assets/images/menu1.png" class="mui-icon mui-icon-home">
-                <div class="mui-media-body">Home</div></router-link></li>
+                <div class="mui-media-body">新闻资讯</div></router-link></li>
         <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4"><a href="#">
                 <img src="../../assets/images/menu2.png" class="mui-icon mui-icon-home">
-                <div class="mui-media-body">Email</div></a></li>
+                <div class="mui-media-body">图片分享</div></a></li>
         <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4"><a href="#">
                 <img src="../../assets/images/menu3.png" class="mui-icon mui-icon-home">
-                <div class="mui-media-body">Chat</div></a></li>
+                <div class="mui-media-body">商品购买</div></a></li>
         <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4"><a href="#">
                 <img src="../../assets/images/menu4.png" class="mui-icon mui-icon-home">
-                <div class="mui-media-body">location</div></a></li>
+                <div class="mui-media-body">留言反馈</div></a></li>
         <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4"><a href="#">
                 <img src="../../assets/images/menu5.png" class="mui-icon mui-icon-home">
-                <div class="mui-media-body">Search</div></a></li>
+                <div class="mui-media-body">视频专区</div></a></li>
         <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4"><a href="#">
                     <img src="../../assets/images/menu6.png" class="mui-icon mui-icon-home">
-                <div class="mui-media-body">Phone</div></a></li>
+                <div class="mui-media-body">联系我们</div></a></li>
 	</ul>
     </div>
 </template>

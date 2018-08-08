@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <mt-header fixed title="黑马程序员.vue项目"></mt-header> 
+    <mt-header fixed title="商城.vue项目"></mt-header> 
     <!-- appear默认动画执行一次 mode规定动画顺序 -->
-    <transition name="tabanim" mode='out-in' appear>
+    <transition name="tabanim" appear>
       <router-view/>
     </transition>
     
@@ -39,14 +39,21 @@ export default {
 <style>
 #app {
   margin-top: 40px;
+  overflow-x: hidden;
 }
-.tabanim-enter,.tabanim-leave-to {
+.tabanim-enter {
+  opacity: 0;
   transform:  translateX(100%)
 }
 .tabanim-enter-active,.tabanim-leave-active{
-  transition: all .2s ease-in-out;
+  transition: all .5s ease;
 }
 .tabanim-enter-to,.tabanim-laeve {
   transform:  translateX(0)  
+}
+.tabanim-leave-to {
+  opacity: 0;
+  transform:  translateX(-100%);
+  position: absolute;
 }
 </style>
