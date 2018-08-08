@@ -1,48 +1,52 @@
 <template>
-  <div class='app-container'>
-      <!-- header -->
-    <header class="mui-bar mui-bar-nav header">
-
-			<h1 class="mui-title">Vue商城</h1>
-		</header>
-      <!-- 中间zrouter-view -->
-<h1 >111</h1>
-      <!-- 底部table -->
-      <nav class="mui-bar mui-bar-tab ">
-        <a class="mui-tab-item mui-active" href="#tabbar">
+  <div id="app">
+    <mt-header fixed title="黑马程序员.vue项目"></mt-header> 
+    <!-- appear默认动画执行一次 mode规定动画顺序 -->
+    <transition name="tabanim" mode='out-in' appear>
+      <router-view/>
+    </transition>
+    
+    <nav class="mui-bar mui-bar-tab">
+        <router-link class="mui-tab-item" to="/home">
           <span class="mui-icon mui-icon-home"></span>
           <span class="mui-tab-label">首页</span>
-        </a>
-        <a class="mui-tab-item" href="#tabbar-with-chat">
-          <span class="mui-icon mui-icon-email"><span class="mui-badge">9</span></span>
-          <span class="mui-tab-label">消息</span>
-        </a>
-        <a class="mui-tab-item" href="#tabbar-with-contact">
-          <span class="mui-icon mui-icon-contact"></span>
-          <span class="mui-tab-label">通讯录</span>
-        </a>
-        <a class="mui-tab-item" href="#tabbar-with-map">
-          <span class="mui-icon mui-icon-gear"></span>
-          <span class="mui-tab-label">设置</span>
-        </a>
-		</nav>
+        </router-link>
+        <router-link class="mui-tab-item" to="/member">
+          <span class="mui-icon mui-icon-email"></span>
+          <span class="mui-tab-label">会员</span>
+        </router-link>
+        <router-link class="mui-tab-item" to="shoppingCar">
+          <span class="mui-icon fa fa-shopping-cart"><span class="mui-badge">0</span></span>
+          <span class="mui-tab-label">购物车</span>
+        </router-link>
+        <router-link class="mui-tab-item" to="search">
+          <span class="mui-icon mui-icon-search"></span>
+          <span class="mui-tab-label">搜索</span>
+        </router-link>
+		</nav>    
   </div>
 </template>
 
 <script>
-export default {
 
+
+
+export default {
+  name: 'App'
 }
 </script>
 
-<style scoped>
-.app-container{
-  padding-top: 40px;
+<style>
+#app {
+  margin-top: 40px;
 }
-.app-container .header{
-  background-color:skyblue;
+.tabanim-enter,.tabanim-leave-to {
+  transform:  translateX(100%)
 }
-.app-container .header h1 {
-  color: #fff;
+.tabanim-enter-active,.tabanim-leave-active{
+  transition: all .2s ease-in-out;
+}
+.tabanim-enter-to,.tabanim-laeve {
+  transform:  translateX(0)  
 }
 </style>
