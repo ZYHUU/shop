@@ -8,10 +8,15 @@
     </p>
     <hr>
     <div class="content" v-html="newsinfo.content"></div>
+
+    <!-- 评论区 -->
+    <comment-box></comment-box>
   </div>
 </template>
 
 <script>
+// 导入评论子组件
+import comment from '../subcomponents/comment.vue'
 export default {
 
   data () {
@@ -33,7 +38,9 @@ export default {
       })
     }
   },
-
+  components: {
+    'comment-box': comment
+  },
   created () {
     this.getNewsInfo()
   }

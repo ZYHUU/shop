@@ -38,7 +38,7 @@ export default {
 
 <style>
 #app {
-  margin-top: 40px;
+  margin: 40px 0 50px 0;
   overflow-x: hidden;
 }
 .tabanim-enter {
