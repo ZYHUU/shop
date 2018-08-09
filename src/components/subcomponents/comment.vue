@@ -6,40 +6,47 @@
     <mt-button type="primary" size='large'>发表评论</mt-button>
    
     <div class="cmt-list">
-        <div class="cmt-item">
+        <div class="cmt-item" v-for="(item,i) in comments" :key="item.add_time">
             <div class="cmt-title">
-                第一楼&nbsp;&nbsp;用户: 匿名用户&nbsp;&nbsp;发表时间：2018:08:08
+                第{{i + 1}}楼&nbsp;&nbsp;用户:{{item.user_name}}&nbsp;&nbsp;发表时间：{{item.add_time | fmTime}}
             </div>
             <div class="cmt-body">
-                锄禾日当午，福芳草珊瑚
+                {{item.content === 'undefined' ? '此用户很懒，什么都没留下' : item.content}}
             </div>
         </div>
     </div>
-     <div class="cmt-list">
-        <div class="cmt-item">
-            <div class="cmt-title">
-                第一楼&nbsp;&nbsp;用户: 匿名用户&nbsp;&nbsp;发表时间：2018:08:08
-            </div>
-            <div class="cmt-body">
-                锄禾日当午，福芳草珊瑚
-            </div>
-        </div>
-    </div>
-     <mt-button type='danger' size='large' plain>加载更多</mt-button>
+     <mt-button type='danger' size='large' plain @click="getMore">加载更多</mt-button>
   </div>
 </template>
 
 <script>
 export default {
-
   data () {
     return { 
+        pageIndex: 1, // 默认值那是第一页数据
+        comments: [] // 所有评论数据
     }
   },
-
-  methods: {},
-
+  methods: {
+      getComments () {
+          this.axios.get("api/getcomments/"+ this.id+"?pageindex=" + this.pageIndex)
+          .then(res => {
+              if (res.data.status === 0) {
+                  // 评论数据应该拼接
+                  this.comments = this.comments.concat(res.data.message)
+              } else {
+                  Toast('获取评论失败')
+              }
+          })
+      },
+      getMore () {
+          this.pageIndex++
+          this.getComments()
+      }
+  },
+  props: ["id"],  
   created () {
+    this.getComments()
   }
 }
 </script>
